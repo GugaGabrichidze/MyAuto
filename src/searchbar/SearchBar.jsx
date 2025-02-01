@@ -20,11 +20,11 @@ function SearchBar(){
                     <button>Euro</button>
                     <button>Gel</button>
                 </div>
-                    <div className={"inputsprices"}></div>
+                    <div className={"inputprices"}></div>
                 <input type={"text"} placeholder={"დან"}></input>
                 <input type={"text"} placeholder={"მდე"}></input>
                 </div>
-                <button>ძებნა</button>
+                <button className={"searchbutton"}>ძებნა</button>
             </div>
 
         </>

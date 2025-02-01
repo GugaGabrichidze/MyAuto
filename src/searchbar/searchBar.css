@@ -81,7 +81,7 @@ input[type="text"] {
     font-size: 14px;
 }
 
-button {
+.searchbutton {
     width: 100%;
     padding: 10px;
     background-color: #ff5722;
@@ -92,6 +92,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.searchbutton:hover {
     background-color: #e64a19;
 }
