@@ -1,0 +1,9 @@
+.MainPage{
+    display: flex;
+
+    justify-content: right;
+}
+
+.selects{
+    width: 200px;
+}

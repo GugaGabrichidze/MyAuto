@@ -1,34 +1,69 @@
-import './searchBar.css'
-function SearchBar(){
-    return(
-        <>
-            <div className={"main"}>
-                <div className={"carButtons"}></div>
-                <button className={"carbutton"}><img src={"src/searchbar/Logos/car.png"}></img></button>
-                <button className={"tractorbutton"}><img src={"src/searchbar/Logos/tractor.png"}></img></button>
-                <button className={"motobutton"}> <img src={"src/searchbar/Logos/moto.png"}></img></button>
-                <div className={"selects"}>
-                    <p className={"selectname"}>გარიგების ტიპი</p>
-                    <div><select><option>იყიდება</option></select></div>
-                    <div><p className={"selectname"}>მწარმოებელი</p></div>
-                    <div><select><option>ყველა მწარმოებელი</option></select></div>
-                    <div><p className={"selectname"}>კატეგორია</p></div>
-                    <div><select><option>ყველა კატეგორია</option></select></div>
-                </div>
-                <div className={"fasi"}>
-                <div><p>ფასი</p>
-                    <button>Euro</button>
-                    <button>Gel</button>
-                </div>
-                    <div className={"inputprices"}></div>
-                <input type={"text"} placeholder={"დან"}></input>
-                <input type={"text"} placeholder={"მდე"}></input>
-                </div>
-                <button className={"searchbutton"}>ძებნა</button>
+import "./searchBar.css";
+
+function SearchBar({ MyAutoData, setActiveButton, activeButton, CategoryData ,setCategoryData}) {
+    return (
+        <div className="main">
+            {/* ღილაკები კატეგორიის მიხედვით */}
+            <div className="carButtons">
+                {["car", "tractor", "moto"].map((type) => {
+                    // ღილაკის კლასის შექმნა, აქტიური ღილაკისთვის დამატებული "active" კლასი
+                    let buttonClass = `${type}button`;
+                    if (activeButton === type) {
+                        buttonClass += " active";
+                    }
+
+                    return (
+                        // თითოეული ღილაკის შექმნა
+                        <button key={type} className={buttonClass} onClick={() => setActiveButton(type)}>
+                            <img src={`src/searchbar/Logos/${type}.svg`} alt={type} />
+                        </button>
+                    );
+                })}
             </div>
 
-        </>
-    )
+            {/* ფილტრების ნაწილი */}
+            <div className="selects">
+                {/* გარიგების ტიპი */}
+                <p className="selectname">გარიგების ტიპი</p>
+                <select>
+                    <option>იყიდება</option>
+                </select>
+
+                {/* მწარმოებელი */}
+                <p className="selectname">მწარმოებელი</p>
+                <select>
+                    <option>ყველა მწარმოებელი</option>
+                    {/* მძღოლების (მწარმოებლების) არჩევა */}
+                    {MyAutoData.map((brand) => (
+                        <option key={brand.man_id}>{brand.man_name}</option>
+                    ))}
+                </select>
+
+                {/* კატეგორია */}
+                <p className="selectname">კატეგორია</p>
+                <select>
+                    <option>ყველა კატეგორია</option>
+                    {/* კატეგორიის არჩევა */}
+                    {CategoryData.map((category) => (
+                        <option key={category.category_id} value={category.category_id}>
+                            {category.title}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
+            {/* ფასები */}
+            <div className="prices">
+                {/* დაწყების და დამთავრების ფასის შეყვანა */}
+                <input type="text" placeholder="დან" />
+                <span>-</span>
+                <input type="text" placeholder="მდე" />
+            </div>
+
+            {/* ძებნის ღილაკი */}
+            <button className="searchbutton">ძებნა</button>
+        </div>
+    );
 }
 
 export default SearchBar;

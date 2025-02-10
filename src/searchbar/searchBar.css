@@ -9,7 +9,6 @@
 
 .carButtons {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 10px;
 }
 
@@ -22,6 +21,11 @@
     border-radius: 5px;
     font-size: 14px;
 }
+.active {
+    background-color: #FD4100;
+    border-radius: 5px;
+}
+
 
 .carbutton:hover, .tractorbutton:hover, .motobutton:hover {
     background-color: #ddd;
@@ -45,32 +49,39 @@ select {
     font-size: 14px;
 }
 
-.fasi {
-    margin-bottom: 15px;
-}
+/*.fasi {*/
+/*    margin-bottom: 15px;*/
 
-.fasi p {
-    font-size: 14px;
-    font-weight: bold;
-}
+/*}*/
 
-.fasi button {
-    margin-right: 5px;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    background-color: #f5f5f5;
-}
+/*.fasi p {*/
+/*    font-size: 14px;*/
+/*    font-weight: bold;*/
+/*}*/
 
-.fasi button:hover {
-    background-color: #ddd;
-}
+/*.fasi button {*/
+/*    margin-right: 5px;*/
+/*    padding: 6px 12px;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    font-size: 14px;*/
+/*    background-color: #f5f5f5;*/
 
-.inputsprices {
+/*}*/
+
+/*.fasi button:hover {*/
+/*    background-color: #ddd;*/
+/*}*/
+
+.prices {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    gap: 5px;
+}
+.prices > span{
+    padding-top: 6px;
 }
 
 input[type="text"] {
@@ -79,6 +90,7 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
+    outline: none;
 }
 
 .searchbutton {
@@ -90,8 +102,12 @@ input[type="text"] {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .searchbutton:hover {
     background-color: #e64a19;
 }
+
+
+
