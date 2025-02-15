@@ -1,9 +1,55 @@
-.MainPage{
-    display: flex;
-
+.MainPage {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 20px;
     justify-content: right;
+
 }
 
-.selects{
-    width: 200px;
+.selects {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.select1, .select2 {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    max-width: 200px;
+}
+
+.car-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.car-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+}
+
+.car-image {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+    background: #f0f0f0;
+}
+
+.car-info {
+    flex: 1;
+}
+
+.car-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5722;
 }

@@ -40,7 +40,7 @@ function App() {
         axios.get("https://api2.myauto.ge/ka/cats/get")
             .then((response) => {
                 if (response.data && response.data.data) {
-                    let catgrData = response.data.data;
+                    const catgrData = response.data.data;
 
                     // კატეგორიის მონაცემების ფილტრაცია აქტიური ღილაკის მიხედვით
                     let filteredCategoryData = [];
@@ -72,7 +72,9 @@ function App() {
             />
         </div>
             <div>
-                <MainPage/>
+                <MainPage
+                    AutoData={MyAutoData}
+                />
             </div>
         </>
     );
