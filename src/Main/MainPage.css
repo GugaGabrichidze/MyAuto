@@ -1,7 +1,6 @@
 .MainPage {
     width: 50%;
     margin-left: 40%;
-    margin-top: -400px;
 }
 
 .selects {
@@ -48,8 +47,8 @@
 }
 
 .car-image {
-    width: 120px;
-    height: 90px;
+    width: 170px;
+    height: 190px;
     object-fit: cover;
     border-radius: 5px;
     background: #f0f0f0;
@@ -64,3 +63,15 @@
     font-weight: bold;
     color: #ff5722;
 }
+select option {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.p-list{
+    color: #a09e9e;
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
