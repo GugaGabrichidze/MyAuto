@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchBar from "./searchbar/SearchBar.jsx";
 import MainPage from "./Main/MainPage.jsx";
-function App() {
+function App(setModelData) {
     // მდგომარეობა, რომელიც ინახავს ავტომობილების მონაცემებს პირველი API-დან
     const [MyAutoData, setMyAutoData] = useState([]);
 
-    // მდგომარეობა, რომელიც აკონტროლებს აქტიურ ღილაკს (ავტომობილი, ტრაქტორი, მото)
+    // მდგომარეობა, რომელიც აკონტროლებს აქტიურ ღილაკს (ავტომობილი, ტრაქტორი, მოტო)
     const [activeButton, setActiveButton] = useState("car");
 
     // მდგომარეობა, რომელიც ინახავს კატეგორიის მონაცემებს მეორე API-დან
@@ -68,7 +68,8 @@ function App() {
                 setActiveButton={setActiveButton} // ფუნქცია, რომ შეიცვალოს აქტიური ღილაკი
                 activeButton={activeButton} // მიმდინარე აქტიური კატეგორიის ღილაკი
                 CategoryData={CategoryData} // ფილტრირებული კატეგორიის მონაცემები
-                setCategoryData={setCategoryData} // ფუნქცია კატეგორიის მონაცემების დასაწესებლად
+                setCategoryData={setCategoryData}// ფუნქცია კატეგორიის მონაცემების დასაწესებლად
+                setModelData={setModelData}
             />
         </div>
             <div>
